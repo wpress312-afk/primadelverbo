@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0c0c0a;
+  --color-bg2: #131209;
+  --color-surface: #191814;
+  --color-border: #28261f;
+  --color-gold: #c7ba8c;
+  --color-gold2: #e0d499;
+  --color-gold-muted: #94885c;
+  --color-white: #f0e9d2;
+  --color-text2: #a09881;
+  --color-text3: #605a48;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+}
+
+:root {
+  --bg: #0c0c0a;
+  --bg2: #131209;
+  --surface: #191814;
+  --border: #28261f;
+  --gold: #c7ba8c;
+  --gold2: #e0d499;
+  --gold-muted: #94885c;
+  --white: #f0e9d2;
+  --text2: #a09881;
+  --text3: #605a48;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #0c0c0a;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--gold-muted);
+  color: var(--bg);
+}
+
+/* Prose styles for blog posts */
+.prose {
+  color: var(--white);
+  max-width: 65ch;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.prose h2 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  line-height: 2;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  font-size: 1.125rem;
+}
+
+.prose a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: var(--gold-muted);
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--gold2);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--gold-muted);
+  margin-left: 0;
+  padding-left: 1.5rem;
+  color: var(--text2);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.prose em {
+  color: var(--text2);
+  font-style: italic;
+}
+
+.prose strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-muted);
+}
