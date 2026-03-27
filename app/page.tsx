@@ -32,7 +32,7 @@ export default function HomePage() {
         />
 
         <p
-          className="text-xs tracking-[0.3em] uppercase mb-6"
+          className="text-sm tracking-[0.3em] uppercase mb-6"
           style={{ color: "var(--gold-muted)" }}
         >
           Prima del Verbo
@@ -87,7 +87,7 @@ export default function HomePage() {
       >
         <div className="max-w-2xl mx-auto text-center">
           <p
-            className="text-xs tracking-[0.25em] uppercase mb-6"
+            className="text-sm tracking-[0.25em] uppercase mb-6"
             style={{ color: "var(--gold-muted)" }}
           >
             Il progetto
@@ -112,13 +112,13 @@ export default function HomePage() {
         <div className="flex items-end justify-between mb-8 md:mb-12">
           <div>
             <p
-              className="text-xs tracking-[0.25em] uppercase mb-2"
+              className="text-sm tracking-[0.25em] uppercase mb-2"
               style={{ color: "var(--gold-muted)" }}
             >
               Dal blog
             </p>
             <h2
-              className="text-3xl md:text-4xl font-light"
+              className="text-3xl md:text-4xl lg:text-5xl font-light"
               style={{ color: "var(--gold)" }}
             >
               Ultime riflessioni
@@ -142,7 +142,7 @@ export default function HomePage() {
               style={{ borderColor: "var(--border)", backgroundColor: "var(--surface)" }}
             >
               <time
-                className="text-xs tracking-widest uppercase block mb-3"
+                className="text-sm tracking-widest uppercase block mb-3"
                 style={{ color: "var(--text3)" }}
               >
                 {new Date(post.date).toLocaleDateString("it-IT", {
@@ -152,16 +152,16 @@ export default function HomePage() {
                 })}
               </time>
               <h3
-                className="text-lg mb-3 leading-snug"
+                className="text-2xl lg:text-3xl mb-3 leading-snug"
                 style={{ color: "var(--gold)" }}
               >
                 {post.title}
               </h3>
-              <p className="text-base leading-loose" style={{ color: "var(--text2)" }}>
+              <p className="text-xl leading-loose" style={{ color: "var(--text2)" }}>
                 {post.excerpt}
               </p>
               <span
-                className="inline-block mt-4 text-xs tracking-widest uppercase"
+                className="inline-block mt-4 text-sm tracking-widest uppercase"
                 style={{ color: "var(--gold-muted)" }}
               >
                 Leggi →
@@ -206,7 +206,7 @@ export default function HomePage() {
 
             <div className="flex-1 text-center md:text-left">
               <p
-                className="text-xs tracking-[0.25em] uppercase mb-2"
+                className="text-sm tracking-[0.25em] uppercase mb-2"
                 style={{ color: "var(--gold-muted)" }}
               >
                 Opera
@@ -217,7 +217,7 @@ export default function HomePage() {
               >
                 La tesi di laurea
               </h2>
-              <p className="text-lg leading-loose mb-6" style={{ color: "var(--text2)" }}>
+              <p className="text-xl leading-loose mb-6" style={{ color: "var(--text2)" }}>
                 Il testo fondativo del progetto. Un&rsquo;indagine sul linguaggio, l&rsquo;essere e
                 il silenzio come condizione del pensiero filosofico. Disponibile gratuitamente.
               </p>
@@ -237,18 +237,18 @@ export default function HomePage() {
       <section className="py-12 md:py-24 px-6">
         <div className="max-w-xl mx-auto text-center">
           <p
-            className="text-xs tracking-[0.25em] uppercase mb-4"
+            className="text-sm tracking-[0.25em] uppercase mb-4"
             style={{ color: "var(--gold-muted)" }}
           >
             Newsletter
           </p>
           <h2
-            className="text-3xl font-light mb-4"
+            className="text-3xl lg:text-5xl font-light mb-4"
             style={{ color: "var(--gold)" }}
           >
             Rimani nella soglia
           </h2>
-          <p className="text-lg leading-loose mb-8 md:mb-10" style={{ color: "var(--text2)" }}>
+          <p className="text-xl leading-loose mb-8 md:mb-10" style={{ color: "var(--text2)" }}>
             Riflessioni periodiche via email. Niente spam — solo pensieri che meritano spazio.
           </p>
           <NewsletterForm />

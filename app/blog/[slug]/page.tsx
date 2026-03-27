@@ -27,11 +27,11 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-10 md:py-20">
+    <div className="max-w-3xl mx-auto px-6 md:px-0 py-10 md:py-20">
       {/* Back */}
       <Link
         href="/blog"
-        className="inline-flex items-center gap-2 text-xs tracking-widest uppercase mb-8 md:mb-12 transition-colors"
+        className="inline-flex items-center gap-2 text-sm tracking-widest uppercase mb-8 md:mb-12 transition-colors"
         style={{ color: "var(--text3)" }}
       >
         ← Blog
@@ -40,7 +40,7 @@ export default async function PostPage({ params }: Props) {
       {/* Header */}
       <header className="mb-8 md:mb-12">
         <time
-          className="text-xs tracking-widest uppercase block mb-4"
+          className="text-sm tracking-widest uppercase block mb-4"
           style={{ color: "var(--text3)" }}
         >
           {new Date(post.date).toLocaleDateString("it-IT", {
@@ -56,7 +56,7 @@ export default async function PostPage({ params }: Props) {
           {post.title}
         </h1>
         <p
-          className="text-lg leading-loose italic"
+          className="text-xl leading-loose italic"
           style={{ color: "var(--text2)" }}
         >
           {post.excerpt}
@@ -67,7 +67,7 @@ export default async function PostPage({ params }: Props) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs px-2 py-0.5 border tracking-wide"
+                className="text-sm px-2 py-0.5 border tracking-wide"
                 style={{ borderColor: "var(--border)", color: "var(--text3)" }}
               >
                 {tag}
@@ -95,7 +95,7 @@ export default async function PostPage({ params }: Props) {
       >
         <Link
           href="/blog"
-          className="text-sm tracking-widest uppercase"
+          className="text-base tracking-widest uppercase"
           style={{ color: "var(--text3)" }}
         >
           ← Tutti gli articoli

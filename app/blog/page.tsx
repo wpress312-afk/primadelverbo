@@ -15,7 +15,7 @@ export default function BlogPage() {
       {/* Header */}
       <div className="mb-10 md:mb-16">
         <p
-          className="text-xs tracking-[0.25em] uppercase mb-3"
+          className="text-sm tracking-[0.25em] uppercase mb-3"
           style={{ color: "var(--gold-muted)" }}
         >
           Blog
@@ -43,7 +43,7 @@ export default function BlogPage() {
             <Link href={`/blog/${post.slug}`} className="group block">
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
                 <time
-                  className="text-xs tracking-widest uppercase flex-shrink-0"
+                  className="text-sm tracking-widest uppercase flex-shrink-0"
                   style={{ color: "var(--text3)" }}
                 >
                   {new Date(post.date).toLocaleDateString("it-IT", {
@@ -53,14 +53,14 @@ export default function BlogPage() {
                   })}
                 </time>
                 <h2
-                  className="text-xl md:text-2xl font-light leading-snug"
+                  className="text-xl md:text-2xl lg:text-3xl font-light leading-snug"
                   style={{ color: "var(--gold)" }}
                 >
                   {post.title}
                 </h2>
               </div>
               <p
-                className="mt-3 text-lg leading-loose"
+                className="mt-3 text-xl leading-loose"
                 style={{ color: "var(--text2)" }}
               >
                 {post.excerpt}
@@ -82,7 +82,7 @@ export default function BlogPage() {
                 </div>
               )}
               <span
-                className="inline-block mt-4 text-xs tracking-widest uppercase"
+                className="inline-block mt-4 text-sm tracking-widest uppercase"
                 style={{ color: "var(--gold-muted)" }}
               >
                 Leggi →
