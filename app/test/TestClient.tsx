@@ -277,27 +277,27 @@ export default function TestClient() {
   };
 
   return (
-    <div style={{ maxWidth: "680px", margin: "0 auto", padding: "3rem 1.5rem 5rem" }}>
+    <div style={{ maxWidth: "740px", margin: "0 auto", padding: "3rem 1.5rem 5rem" }}>
 
       {/* ── INTRO ─────────────────────────────────────────────────────────── */}
       {screen === "intro" && (
         <div>
-          <p style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold-muted)", marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold-muted)", marginBottom: "0.75rem" }}>
             Test filosofico
           </p>
-          <h1 style={{ fontSize: "clamp(1.6rem, 5vw, 2.5rem)", fontWeight: 300, color: "var(--gold)", lineHeight: 1.25, marginBottom: "1.5rem" }}>
+          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 300, color: "var(--gold)", lineHeight: 1.2, marginBottom: "1.5rem" }}>
             Quanto sei lontano<br />da te stesso?
           </h1>
           <div style={{ width: "3rem", height: "1px", backgroundColor: "var(--gold-muted)", marginBottom: "2rem" }} />
-          <p style={{ fontSize: "1rem", color: "var(--text2)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+          <p style={{ fontSize: "1.25rem", color: "var(--text2)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
             Un test in 25 domande. Non misura quanto sai — misura come stai. Il risultato è una mappa a cinque dimensioni: dove il sonno è più denso in te, e da dove puoi cominciare a tornare.
           </p>
-          <div style={{ fontSize: "0.85rem", color: "var(--text3)", lineHeight: 1.7, padding: "1rem 1.25rem", border: "0.5px solid var(--border)", marginBottom: "2.5rem" }}>
+          <div style={{ fontSize: "1rem", color: "var(--text3)", lineHeight: 1.75, padding: "1.1rem 1.4rem", border: "0.5px solid var(--border)", marginBottom: "2.5rem" }}>
             Non ci sono risposte giuste o sbagliate. Rispondi con la prima cosa che senti, non con quello che pensi di dover sentire. Alcune domande richiedono una risposta scritta breve — anche una sola frase va bene.
           </div>
           <button
             onClick={() => setScreen("q")}
-            style={{ ...btnBase, padding: "0.65rem 2rem", fontSize: "0.8rem", color: "var(--gold)", borderColor: "var(--gold-muted)" }}
+            style={{ ...btnBase, padding: "0.75rem 2.25rem", fontSize: "0.875rem", color: "var(--gold)", borderColor: "var(--gold-muted)" }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
@@ -314,30 +314,30 @@ export default function TestClient() {
             <div style={{ height: "1px", backgroundColor: "var(--gold-muted)", width: `${(current / questions.length) * 100}%`, transition: "width 0.3s" }} />
           </div>
 
-          <p style={{ fontSize: "0.7rem", color: "var(--text3)", letterSpacing: "0.12em", marginBottom: "1rem" }}>
+          <p style={{ fontSize: "0.875rem", color: "var(--text3)", letterSpacing: "0.12em", marginBottom: "1.25rem" }}>
             {current + 1} di {questions.length}
           </p>
 
-          <p style={{ fontSize: "1.05rem", color: "var(--white)", lineHeight: 1.65, marginBottom: "2rem", fontWeight: 300 }}>
+          <p style={{ fontSize: "clamp(1.15rem, 2.5vw, 1.4rem)", color: "var(--white)", lineHeight: 1.7, marginBottom: "2.25rem", fontWeight: 300 }}>
             {q.text}
           </p>
 
           {/* Scale */}
           {q.type === "scale" && (
             <div style={{ marginBottom: "2.5rem" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem", gap: "1rem" }}>
-                <span style={{ fontSize: "0.72rem", color: "var(--text3)", lineHeight: 1.5, maxWidth: "45%" }}>{q.l}</span>
-                <span style={{ fontSize: "0.72rem", color: "var(--text3)", lineHeight: 1.5, maxWidth: "45%", textAlign: "right" }}>{q.r}</span>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.9rem", gap: "1rem" }}>
+                <span style={{ fontSize: "0.875rem", color: "var(--text3)", lineHeight: 1.5, maxWidth: "45%" }}>{q.l}</span>
+                <span style={{ fontSize: "0.875rem", color: "var(--text3)", lineHeight: 1.5, maxWidth: "45%", textAlign: "right" }}>{q.r}</span>
               </div>
-              <div style={{ display: "flex", gap: "6px" }}>
+              <div style={{ display: "flex", gap: "8px" }}>
                 {[1, 2, 3, 4, 5, 6, 7].map((val) => (
                   <button
                     key={val}
                     onClick={() => handleSelectScale(val)}
                     style={{
                       flex: 1,
-                      height: "44px",
-                      fontSize: "0.9rem",
+                      height: "54px",
+                      fontSize: "1.1rem",
                       fontFamily: "inherit",
                       cursor: "pointer",
                       transition: "all 0.15s",
@@ -356,7 +356,7 @@ export default function TestClient() {
           {/* Open */}
           {q.type === "open" && (
             <div style={{ marginBottom: "2.5rem" }}>
-              <p style={{ fontSize: "0.78rem", color: "var(--text2)", marginBottom: "0.6rem", letterSpacing: "0.06em" }}>
+              <p style={{ fontSize: "0.875rem", color: "var(--text2)", marginBottom: "0.75rem", letterSpacing: "0.06em" }}>
                 Scrivi quello che senti, anche in poche parole.
               </p>
               <textarea
@@ -365,15 +365,15 @@ export default function TestClient() {
                 placeholder="..."
                 style={{
                   width: "100%",
-                  minHeight: "100px",
-                  padding: "0.75rem 1rem",
-                  fontSize: "1rem",
+                  minHeight: "120px",
+                  padding: "1rem 1.25rem",
+                  fontSize: "1.15rem",
                   fontFamily: "inherit",
                   color: "var(--white)",
                   backgroundColor: "var(--bg)",
                   border: "0.5px solid var(--border)",
                   resize: "vertical",
-                  lineHeight: 1.7,
+                  lineHeight: 1.75,
                   outline: "none",
                   transition: "border-color 0.15s",
                 }}
@@ -387,7 +387,7 @@ export default function TestClient() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <button
               onClick={advance}
-              style={{ fontSize: "0.78rem", color: "var(--text3)", background: "none", border: "none", cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.08em" }}
+              style={{ fontSize: "0.875rem", color: "var(--text3)", background: "none", border: "none", cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.1em" }}
             >
               salta
             </button>
@@ -396,8 +396,8 @@ export default function TestClient() {
               disabled={!isNextEnabled}
               style={{
                 ...btnBase,
-                padding: "0.6rem 1.75rem",
-                fontSize: "0.78rem",
+                padding: "0.7rem 2rem",
+                fontSize: "0.875rem",
                 color: isNextEnabled ? "var(--gold)" : "var(--text3)",
                 borderColor: isNextEnabled ? "var(--gold-muted)" : "var(--border)",
                 cursor: isNextEnabled ? "pointer" : "not-allowed",
@@ -426,14 +426,14 @@ export default function TestClient() {
           </div>
 
           {/* Report header */}
-          <p style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold-muted)", marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold-muted)", marginBottom: "0.75rem" }}>
             La tua mappa
           </p>
-          <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: 300, color: "var(--gold)", marginBottom: "1rem" }}>
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.75rem)", fontWeight: 300, color: "var(--gold)", marginBottom: "1rem" }}>
             Questa è la tua mappa
           </h1>
           <div style={{ width: "3rem", height: "1px", backgroundColor: "var(--gold-muted)", marginBottom: "1.5rem" }} />
-          <p style={{ fontSize: "1rem", color: "var(--text2)", lineHeight: 1.85, marginBottom: "2.5rem" }}>
+          <p style={{ fontSize: "1.25rem", color: "var(--text2)", lineHeight: 1.85, marginBottom: "2.5rem" }}>
             {reportData.introText}
           </p>
 
@@ -445,41 +445,41 @@ export default function TestClient() {
               style={{
                 backgroundColor: "var(--surface)",
                 border: "0.5px solid var(--border)",
-                padding: "1.25rem 1.5rem",
-                marginBottom: "1rem",
+                padding: "1.5rem 1.75rem",
+                marginBottom: "1.25rem",
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem", gap: "1rem" }}>
                 <div>
-                  <p style={{ fontSize: "0.7rem", color: "var(--text3)", marginBottom: "0.2rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                  <p style={{ fontSize: "0.8rem", color: "var(--text3)", marginBottom: "0.25rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                     {p.title}
                   </p>
-                  <p style={{ fontSize: "1rem", color: "var(--white)", fontWeight: 400 }}>
+                  <p style={{ fontSize: "1.2rem", color: "var(--white)", fontWeight: 400 }}>
                     {profileData.name}
                   </p>
                 </div>
-                <span style={{ fontSize: "0.68rem", padding: "3px 10px", whiteSpace: "nowrap", letterSpacing: "0.08em", backgroundColor: zoneStyles[zone].bg, color: zoneStyles[zone].color }}>
+                <span style={{ fontSize: "0.8rem", padding: "4px 12px", whiteSpace: "nowrap", letterSpacing: "0.08em", backgroundColor: zoneStyles[zone].bg, color: zoneStyles[zone].color }}>
                   {zoneLabel}
                 </span>
               </div>
 
               {/* Bar */}
-              <div style={{ height: "2px", backgroundColor: "var(--border)", marginBottom: "1rem" }}>
+              <div style={{ height: "2px", backgroundColor: "var(--border)", marginBottom: "1.1rem" }}>
                 <div style={{ height: "2px", width: `${barPct}%`, backgroundColor: zoneBarColor[zone], transition: "width 0.6s" }} />
               </div>
 
-              <p style={{ fontSize: "0.9rem", color: "var(--text2)", lineHeight: 1.8 }}>
+              <p style={{ fontSize: "1.1rem", color: "var(--text2)", lineHeight: 1.85 }}>
                 {profileData.text}
               </p>
 
               {/* Article link */}
-              <div style={{ marginTop: "1rem", paddingTop: "0.75rem", borderTop: "0.5px solid var(--border)" }}>
-                <p style={{ fontSize: "0.65rem", color: "var(--text3)", marginBottom: "0.35rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              <div style={{ marginTop: "1.25rem", paddingTop: "1rem", borderTop: "0.5px solid var(--border)" }}>
+                <p style={{ fontSize: "0.8rem", color: "var(--text3)", marginBottom: "0.4rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   Articolo correlato
                 </p>
                 <Link
                   href={p.articleSlug}
-                  style={{ fontSize: "0.85rem", color: "var(--gold-muted)", textDecoration: "none", borderBottom: "0.5px solid var(--border)", paddingBottom: "1px", transition: "color 0.15s" }}
+                  style={{ fontSize: "1rem", color: "var(--gold-muted)", textDecoration: "none", borderBottom: "0.5px solid var(--border)", paddingBottom: "1px", transition: "color 0.15s" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "var(--gold-muted)")}
                 >
@@ -491,17 +491,17 @@ export default function TestClient() {
 
           {/* Footer row */}
           <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "0.5px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-            <p style={{ fontSize: "0.8rem", color: "var(--text3)", fontStyle: "italic" }}>
+            <p style={{ fontSize: "0.9rem", color: "var(--text3)", fontStyle: "italic" }}>
               © Yan Pastushenko · <em>Dalla separazione all'Uno</em> · 2026
             </p>
             <button
               className="no-print"
               onClick={() => window.print()}
-              style={{ ...btnBase, display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem 1.25rem", fontSize: "0.72rem", color: "var(--text2)" }}
+              style={{ ...btnBase, display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 1.4rem", fontSize: "0.875rem", color: "var(--text2)" }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--gold-muted)"; e.currentTarget.style.color = "var(--gold)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text2)"; }}
             >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
                 <path d="M8 1v9M5 7l3 3 3-3M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
               </svg>
               Scarica PDF
