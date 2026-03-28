@@ -4,14 +4,45 @@ import { useState } from "react";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
-    // Placeholder: integra con Mailchimp / ConvertKit / Resend
-    setStatus("success");
-    setEmail("");
+    if (!email || status === "loading") return;
+
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(data.error || "Qualcosa non ha funzionato.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setErrorMsg("Errore di rete. Riprova.");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <p style={{ fontSize: "1rem", color: "var(--gold-muted)", lineHeight: 1.7 }}>
+        Sei nella soglia. Ti scrivo presto.
+      </p>
+    );
   }
 
   return (
@@ -22,6 +53,7 @@ export default function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="la tua email"
         required
+        disabled={status === "loading"}
         className="flex-1 px-4 py-3 text-sm bg-transparent border outline-none"
         style={{
           borderColor: "var(--border)",
@@ -31,23 +63,23 @@ export default function NewsletterForm() {
       />
       <button
         type="submit"
-        className="px-6 py-3 text-sm tracking-widest uppercase border transition-colors"
+        disabled={status === "loading"}
+        className="px-6 py-3 text-sm tracking-widest uppercase border transition-opacity"
         style={{
           borderColor: "var(--gold)",
           color: "var(--gold)",
           letterSpacing: "0.15em",
           backgroundColor: "transparent",
+          opacity: status === "loading" ? 0.5 : 1,
+          cursor: status === "loading" ? "not-allowed" : "pointer",
         }}
       >
-        Iscriviti
+        {status === "loading" ? "..." : "Iscriviti"}
       </button>
 
-      {status === "success" && (
-        <p
-          className="w-full text-sm text-center mt-2"
-          style={{ color: "var(--gold-muted)" }}
-        >
-          Iscritto. Ci vediamo nella soglia.
+      {status === "error" && (
+        <p className="w-full text-sm mt-2" style={{ color: "#c07070" }}>
+          {errorMsg}
         </p>
       )}
     </form>
