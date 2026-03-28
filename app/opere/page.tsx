@@ -79,31 +79,18 @@ export default function OpérePage() {
                 Facoltà di Filosofia · Tesi di laurea magistrale · Relatore: Prof. —
               </p>
 
-              {/* Download placeholder */}
-              <div
-                className="inline-flex items-center gap-3 border px-5 py-3 text-sm tracking-widest uppercase cursor-not-allowed opacity-60"
-                style={{ borderColor: "var(--border)", color: "var(--text2)" }}
-                title="Il PDF sarà disponibile a breve"
+              {/* Download */}
+              <a
+                href="/tesi.pdf"
+                download
+                className="inline-flex items-center gap-3 border px-5 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80"
+                style={{ borderColor: "var(--gold-muted)", color: "var(--gold)" }}
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M8 1v9M5 7l3 3 3-3M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
                 </svg>
-                Download PDF — prossimamente
-              </div>
-
-              <p
-                className="mt-4 text-xs italic"
-                style={{ color: "var(--text3)" }}
-              >
-                Inserisci il file PDF della tesi nella cartella{" "}
-                <code
-                  className="px-1"
-                  style={{ backgroundColor: "var(--bg2)", color: "var(--gold-muted)" }}
-                >
-                  /public/tesi.pdf
-                </code>{" "}
-                per abilitare il download.
-              </p>
+                Download PDF
+              </a>
             </div>
           </div>
         </div>

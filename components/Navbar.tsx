@@ -51,6 +51,15 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+          <Link
+            href="/test"
+            className="text-sm tracking-widest uppercase transition-opacity"
+            style={{ color: "var(--gold)", letterSpacing: "0.15em", border: "0.5px solid var(--gold-muted)", padding: "4px 12px" }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+          >
+            Test
+          </Link>
         </div>
 
         {/* Mobile hamburger — assoluto a destra */}
@@ -98,6 +107,14 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+          <Link
+            href="/test"
+            onClick={() => setOpen(false)}
+            className="text-sm tracking-widest uppercase"
+            style={{ color: "var(--gold)", letterSpacing: "0.15em", border: "0.5px solid var(--gold-muted)", padding: "4px 14px" }}
+          >
+            Test
+          </Link>
         </div>
       )}
     </nav>

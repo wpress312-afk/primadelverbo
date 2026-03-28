@@ -129,6 +129,80 @@ body {
   margin: 3rem 0;
 }
 
+/* ── Print / PDF (test report) ───────────────────────────────────────────── */
+
+/* Hide print header on screen */
+.print-header-only {
+  display: none;
+}
+
+@media print {
+  /* Override palette to light for paper */
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f6f2;
+    --surface: #f0efe9;
+    --border: #ccc;
+    --gold: #7a6e3c;
+    --gold-muted: #7a6e3c;
+    --white: #1a1a18;
+    --text2: #444440;
+    --text3: #777770;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* Hide nav, footer, and non-print elements */
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show print header */
+  .print-header-only {
+    display: flex !important;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .print-header-only img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .print-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .print-brand {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1a1a18;
+  }
+
+  .print-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #777770;
+  }
+
+  /* Keep axis cards together across pages */
+  .axis-card-print {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
