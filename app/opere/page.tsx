@@ -75,10 +75,6 @@ export default function OpérePage() {
                 dell&rsquo;Uno come fondamento mai perduto. In dialogo con Plotino, la Qabbalah,
                 l&rsquo;Advaita Vedānta, il Taoismo e la via apofatica.
               </p>
-              <p className="text-base leading-loose mb-6" style={{ color: "var(--text2)" }}>
-                Facoltà di Filosofia · Tesi di laurea magistrale · Relatore: Prof. —
-              </p>
-
               {/* Download */}
               <a
                 href="/tesi.pdf"
