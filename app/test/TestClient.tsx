@@ -243,7 +243,7 @@ export default function TestClient() {
     const next = current + 1;
     if (next >= questions.length) {
       setScreen("report");
-      window.plausible?.("Test Completato");
+      (window as any).plausible?.("Test Completato");
     } else {
       setCurrent(next);
       setSelectedScale(null);

@@ -31,7 +31,7 @@ export default function NewsletterForm() {
 
       setStatus("success");
       setEmail("");
-      window.plausible?.("Iscrizione Newsletter");
+      (window as any).plausible?.("Iscrizione Newsletter");
     } catch {
       setErrorMsg("Errore di rete. Riprova.");
       setStatus("error");
