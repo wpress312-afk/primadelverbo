@@ -4,8 +4,9 @@ import { getPostMeta } from "@/lib/posts";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image({ params }: { params: { slug: string } }) {
-  const post = getPostMeta(params.slug);
+export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostMeta(slug);
   const title = post?.title ?? "Prima del Verbo";
   const excerpt = post?.excerpt ?? "";
   const trimmedExcerpt = excerpt.length > 130 ? excerpt.slice(0, 130) + "…" : excerpt;
