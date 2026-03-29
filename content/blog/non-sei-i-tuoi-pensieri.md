@@ -5,6 +5,8 @@ excerpt: "Siamo abituati a diventare i nostri pensieri — ad abitarli invece di
 chapter: "Consapevolezza"
 readTime: "4 min"
 tags: ["pensieri", "consapevolezza", "identità", "filosofia", "mente"]
+serie: "Dalla separazione all'Uno"
+asse: 1
 ---
 
 Sono le undici di sera. Non stai dormendo. Stai ripassando una conversazione di sei ore fa — una frase che hai detto, o che non hai detto, o che avresti dovuto dire diversamente. Nessuno te lo ha chiesto. Eppure ci sei dentro, completamente.

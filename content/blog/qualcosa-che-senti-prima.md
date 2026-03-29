@@ -5,6 +5,8 @@ excerpt: "Un tramonto che ti ferma. Una musica che apre qualcosa. Un silenzio ch
 chapter: "Presenza"
 readTime: "4 min"
 tags: ["intuizione", "presenza", "silenzio", "consapevolezza", "filosofia"]
+serie: "Dalla separazione all'Uno"
+asse: 4
 ---
 
 Ci sono momenti che non si lasciano spiegare bene.

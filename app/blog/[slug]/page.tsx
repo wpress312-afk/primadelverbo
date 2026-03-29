@@ -1,4 +1,4 @@
-import { getPost, getAllPostSlugs } from "@/lib/posts";
+import { getPost, getAllPostSlugs, getSeriesNavigation } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -109,9 +109,55 @@ export default async function PostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
+      {/* Series navigation */}
+      {(() => {
+        const { prev, next, serie, total } = getSeriesNavigation(post.slug);
+        if (!serie) return null;
+        return (
+          <div className="mt-16" style={{ borderTop: "0.5px solid var(--border)", paddingTop: "2.5rem" }}>
+            <p style={{ fontSize: "0.75rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold-muted)", marginBottom: "1.5rem" }}>
+              Serie · {serie} · {post.asse} di {total}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {prev ? (
+                <Link
+                  href={`/blog/${prev.slug}`}
+                  style={{ border: "0.5px solid var(--border)", padding: "1.25rem 1.5rem", display: "block", textDecoration: "none", transition: "border-color 0.15s" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--gold-muted)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                >
+                  <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--text3)", marginBottom: "0.5rem" }}>
+                    ← Precedente
+                  </p>
+                  <p style={{ fontSize: "1rem", color: "var(--gold)", lineHeight: 1.4, margin: 0, fontWeight: 300 }}>
+                    {prev.title}
+                  </p>
+                </Link>
+              ) : <div />}
+
+              {next ? (
+                <Link
+                  href={`/blog/${next.slug}`}
+                  style={{ border: "0.5px solid var(--border)", padding: "1.25rem 1.5rem", display: "block", textDecoration: "none", textAlign: "right", transition: "border-color 0.15s" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--gold-muted)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                >
+                  <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--text3)", marginBottom: "0.5rem" }}>
+                    Successivo →
+                  </p>
+                  <p style={{ fontSize: "1rem", color: "var(--gold)", lineHeight: 1.4, margin: 0, fontWeight: 300 }}>
+                    {next.title}
+                  </p>
+                </Link>
+              ) : <div />}
+            </div>
+          </div>
+        );
+      })()}
+
       {/* Footer nav */}
       <div
-        className="mt-16 pt-8 border-t flex justify-between items-center"
+        className="mt-8 pt-6 border-t flex justify-between items-center"
         style={{ borderColor: "var(--border)" }}
       >
         <Link

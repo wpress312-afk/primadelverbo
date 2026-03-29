@@ -5,6 +5,8 @@ excerpt: "Sono fatto così. È ovvio che. Frasi brevi, definitive — pronunciat
 chapter: "Identità"
 readTime: "4 min"
 tags: ["certezze", "identità", "consapevolezza", "filosofia", "mente"]
+serie: "Dalla separazione all'Uno"
+asse: 2
 ---
 
 C'è una frase che probabilmente dici spesso, anche senza accorgertene. Cambia forma, ma la sostanza è sempre la stessa: *sono fatto così*. Oppure: *è ovvio che*. Oppure: *questa persona è chiaramente*.

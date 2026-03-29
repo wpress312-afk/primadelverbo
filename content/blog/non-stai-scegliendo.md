@@ -5,6 +5,8 @@ excerpt: "La maggior parte di quello che crediamo di scegliere è in realtà una
 chapter: "Libertà"
 readTime: "5 min"
 tags: ["scelta", "automatismi", "consapevolezza", "libertà", "filosofia"]
+serie: "Dalla separazione all'Uno"
+asse: 5
 ---
 
 Pensa all'ultima volta che hai risposto male a qualcuno.

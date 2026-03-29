@@ -15,6 +15,8 @@ export interface PostMeta {
   chapter?: string;
   readTime?: string;
   coverImage?: string;
+  serie?: string;
+  asse?: number;
 }
 
 export interface Post extends PostMeta {
@@ -51,6 +53,32 @@ export function getPostMeta(slug: string): PostMeta | null {
     chapter: data.chapter,
     readTime: data.readTime,
     coverImage: data.coverImage,
+    serie: data.serie,
+    asse: data.asse,
+  };
+}
+
+export function getSeriesNavigation(slug: string): {
+  prev: PostMeta | null;
+  next: PostMeta | null;
+  serie: string | null;
+  total: number;
+} {
+  const current = getPostMeta(slug);
+  if (!current?.serie || current.asse == null) {
+    return { prev: null, next: null, serie: null, total: 0 };
+  }
+
+  const seriesArticles = getAllPosts()
+    .filter((p) => p.serie === current.serie && p.asse != null)
+    .sort((a, b) => (a.asse ?? 0) - (b.asse ?? 0));
+
+  const idx = seriesArticles.findIndex((p) => p.slug === slug);
+  return {
+    prev: idx > 0 ? seriesArticles[idx - 1] : null,
+    next: idx < seriesArticles.length - 1 ? seriesArticles[idx + 1] : null,
+    serie: current.serie,
+    total: seriesArticles.length,
   };
 }
 
@@ -69,6 +97,8 @@ export async function getPost(slug: string): Promise<Post | null> {
     chapter: data.chapter,
     readTime: data.readTime,
     coverImage: data.coverImage,
+    serie: data.serie,
+    asse: data.asse,
     content: processed.toString(),
   };
 }

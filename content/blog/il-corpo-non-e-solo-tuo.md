@@ -5,6 +5,8 @@ excerpt: "C'è un momento in cui il corpo smette di essere un alleato e diventa 
 chapter: "Corpo"
 readTime: "4 min"
 tags: ["corpo", "consapevolezza", "filosofia", "yoga", "incarnazione"]
+serie: "Dalla separazione all'Uno"
+asse: 3
 ---
 
 C'è un momento preciso in cui il corpo smette di essere un alleato e diventa un rumore di fondo.
