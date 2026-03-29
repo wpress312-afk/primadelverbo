@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     // Email di benvenuto all'iscritto
     await resend.emails.send({
-      from: "Prima del Verbo <noreply@primadelverbo.it>",
+      from: "Prima del Verbo <newsletter@primadelverbo.it>",
       to: email,
       subject: "Sei nella soglia.",
       html: `
