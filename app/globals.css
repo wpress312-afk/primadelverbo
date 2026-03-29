@@ -220,3 +220,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold-muted);
 }
+
+.series-nav-link:hover {
+  border-color: var(--gold-muted) !important;
+}

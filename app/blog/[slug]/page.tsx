@@ -122,9 +122,8 @@ export default async function PostPage({ params }: Props) {
               {prev ? (
                 <Link
                   href={`/blog/${prev.slug}`}
+                  className="series-nav-link"
                   style={{ border: "0.5px solid var(--border)", padding: "1.25rem 1.5rem", display: "block", textDecoration: "none", transition: "border-color 0.15s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--gold-muted)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
                 >
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--text3)", marginBottom: "0.5rem" }}>
                     ← Precedente
@@ -138,9 +137,8 @@ export default async function PostPage({ params }: Props) {
               {next ? (
                 <Link
                   href={`/blog/${next.slug}`}
+                  className="series-nav-link"
                   style={{ border: "0.5px solid var(--border)", padding: "1.25rem 1.5rem", display: "block", textDecoration: "none", textAlign: "right", transition: "border-color 0.15s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--gold-muted)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
                 >
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--text3)", marginBottom: "0.5rem" }}>
                     Successivo →
