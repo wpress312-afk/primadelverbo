@@ -37,9 +37,7 @@ export async function POST(req: Request) {
 
         <!-- Header -->
         <tr><td style="padding-bottom:32px;border-bottom:1px solid #28261f;">
-          <p style="margin:0;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#94885c;">
-            Prima del Verbo
-          </p>
+          <img src="https://primadelverbo.it/logo.png" alt="Prima del Verbo" width="120" style="display:block;border:0;" />
         </td></tr>
 
         <!-- Body -->
@@ -66,8 +64,7 @@ export async function POST(req: Request) {
         <!-- Footer -->
         <tr><td style="padding-top:32px;border-top:1px solid #28261f;">
           <p style="margin:0;font-size:12px;color:#605a48;line-height:1.7;">
-            Hai ricevuto questa email perché ti sei iscritto su primadelverbo.it.<br>
-            <a href="https://primadelverbo.it" style="color:#605a48;">primadelverbo.it</a>
+            Hai ricevuto questa email perché ti sei iscritto su <a href="https://primadelverbo.it" style="color:#94885c;text-decoration:none;">primadelverbo.it</a>.
           </p>
         </td></tr>
 
