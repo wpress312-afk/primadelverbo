@@ -14,12 +14,31 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Prima del Verbo",
   description: "Non stai cercando risposte. Stai ricordando.",
+  metadataBase: new URL("https://primadelverbo.it"),
   openGraph: {
     title: "Prima del Verbo",
     description: "Non stai cercando risposte. Stai ricordando.",
+    url: "https://primadelverbo.it",
     siteName: "Prima del Verbo",
     locale: "it_IT",
     type: "website",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Prima del Verbo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prima del Verbo",
+    description: "Non stai cercando risposte. Stai ricordando.",
+    images: ["/og-default.png"],
+  },
+  alternates: {
+    canonical: "https://primadelverbo.it",
   },
 };
 

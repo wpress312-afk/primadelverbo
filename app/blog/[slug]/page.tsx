@@ -15,9 +15,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
+
+  const url = `https://primadelverbo.it/blog/${slug}`;
+
   return {
     title: `${post.title} — Prima del Verbo`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url,
+      siteName: "Prima del Verbo",
+      locale: "it_IT",
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Yan Pastushenko"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
