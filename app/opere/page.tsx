@@ -66,7 +66,7 @@ export default function OpérePage() {
                 className="text-2xl md:text-3xl font-light mb-4"
                 style={{ color: "var(--gold)" }}
               >
-                Il silenzio come condizione del linguaggio
+                Dalla separazione all&rsquo;Uno
               </h2>
               <p
                 className="text-lg leading-loose mb-2"

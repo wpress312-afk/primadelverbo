@@ -215,7 +215,7 @@ export default function HomePage() {
                 className="text-2xl md:text-3xl font-light mb-3"
                 style={{ color: "var(--gold)" }}
               >
-                La tesi di laurea
+                Dalla separazione all&rsquo;Uno
               </h2>
               <p className="text-xl leading-loose mb-6" style={{ color: "var(--text2)" }}>
                 Il testo fondativo del progetto. Un&rsquo;indagine sul linguaggio, l&rsquo;essere e
