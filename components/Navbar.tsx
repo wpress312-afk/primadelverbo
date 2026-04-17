@@ -21,8 +21,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Prima del Verbo"
-            width={36}
-            height={36}
+            width={46}
+            height={46}
             className="opacity-90 group-hover:opacity-100 transition-opacity"
           />
           <span

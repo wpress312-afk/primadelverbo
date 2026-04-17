@@ -224,3 +224,39 @@ body {
 .series-nav-link:hover {
   border-color: var(--gold-muted) !important;
 }
+
+/* ── Manuscript article overrides ────────────────────────────────────────── */
+.manuscript .prose {
+  font-size: 1.35rem;
+}
+
+.manuscript .prose p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2.1;
+}
+
+@media (min-width: 1024px) {
+  .manuscript .prose p {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+.manuscript .prose h2 {
+  font-size: 1.95rem;
+  font-weight: 500;
+}
+
+.manuscript .prose h3 {
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.manuscript .prose blockquote {
+  font-size: 1.35rem;
+}
+
+.manuscript header p {
+  font-weight: 500;
+}

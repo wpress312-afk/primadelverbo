@@ -2,6 +2,8 @@ import { getPost, getAllPostSlugs, getSeriesNavigation } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import type React from "react";
+import ShareButtons from "@/components/ShareButtons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,7 +44,24 @@ export default async function PostPage({ params }: Props) {
   const post = await getPost(slug);
   if (!post) notFound();
 
+  const manuscript: React.CSSProperties = {
+    "--bg": "#f2e8d0",
+    "--bg2": "#e8dcc0",
+    "--surface": "#ddd0b0",
+    "--border": "#c4a882",
+    "--gold": "#5c3d0a",
+    "--gold2": "#7a5210",
+    "--gold-muted": "#8a6828",
+    "--white": "#2a1f0e",
+    "--text2": "#4a3520",
+    "--text3": "#8a7050",
+    backgroundColor: "#f2e8d0",
+    color: "#2a1f0e",
+    minHeight: "100%",
+  } as React.CSSProperties;
+
   return (
+    <div style={manuscript} className="manuscript">
     <div className="max-w-3xl mx-auto px-6 md:px-0 py-10 md:py-20">
       {/* Back */}
       <Link
@@ -148,6 +167,12 @@ export default async function PostPage({ params }: Props) {
         );
       })()}
 
+      {/* Share */}
+      <ShareButtons
+        title={post.title}
+        url={`https://primadelverbo.it/blog/${post.slug}`}
+      />
+
       {/* Footer nav */}
       <div
         className="mt-8 pt-6 border-t flex justify-between items-center"
@@ -161,6 +186,7 @@ export default async function PostPage({ params }: Props) {
           ← Tutti gli articoli
         </Link>
       </div>
+    </div>
     </div>
   );
 }

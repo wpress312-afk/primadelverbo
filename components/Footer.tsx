@@ -18,7 +18,7 @@ export default function Footer() {
               Prima del Verbo
             </span>
           </div>
-          <p className="text-sm leading-relaxed italic" style={{ color: "var(--text3)" }}>
+          <p className="text-xl leading-relaxed italic text-center md:text-left" style={{ color: "var(--text2)" }}>
             Non stai cercando risposte.<br />Stai ricordando.
           </p>
         </div>
