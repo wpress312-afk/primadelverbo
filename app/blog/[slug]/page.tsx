@@ -31,11 +31,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: ["Yan Pastushenko"],
     },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-    },
     alternates: {
       canonical: url,
     },

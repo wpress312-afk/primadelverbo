@@ -490,6 +490,53 @@ export default function TestClient() {
             </div>
           ))}
 
+          {/* Invito Telegram */}
+          <div
+            className="no-print"
+            style={{
+              marginTop: "2.5rem",
+              padding: "2rem 1.75rem",
+              border: "0.5px solid var(--border)",
+              backgroundColor: "var(--surface)",
+              textAlign: "center",
+            }}
+          >
+            <p style={{
+              fontSize: "1.1rem",
+              color: "var(--text2)",
+              lineHeight: 1.85,
+              marginBottom: "1.5rem",
+              fontStyle: "italic",
+            }}>
+              Non tutte le mappe si leggono con la testa. Se questa ti ha parlato da un altro posto — unisciti a noi. Il cammino del risveglio non si fa da soli.
+            </p>
+            <a
+              href="https://t.me/dallaseparazionealuno"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "0.7rem 1.8rem",
+                border: "0.5px solid var(--gold-muted)",
+                color: "var(--gold)",
+                textDecoration: "none",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontSize: "0.85rem",
+                fontFamily: "inherit",
+                transition: "border-color 0.15s, color 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--gold)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--gold-muted)";
+              }}
+            >
+              Dalla separazione all&rsquo;Uno →
+            </a>
+          </div>
+
           {/* Footer row */}
           <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "0.5px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--text3)", fontStyle: "italic" }}>
