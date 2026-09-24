@@ -77,8 +77,17 @@ export default function OpérePage() {
                 dell&rsquo;Uno come fondamento mai perduto. In dialogo con Plotino, la Qabbalah,
                 l&rsquo;Advaita Vedānta, il Taoismo e la via apofatica.
               </p>
-              {/* Download */}
-              <DownloadTesiButton />
+              {/* Leggi online + Download */}
+              <div className="flex flex-wrap gap-4 mt-4">
+                <Link
+                  href="/opere/dalla-separazione-all-uno"
+                  className="inline-flex items-center gap-3 border px-5 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80"
+                  style={{ borderColor: "var(--gold-muted)", color: "var(--gold)" }}
+                >
+                  Leggi online
+                </Link>
+                <DownloadTesiButton />
+              </div>
             </div>
           </div>
         </div>

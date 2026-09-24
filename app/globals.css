@@ -260,3 +260,9 @@ body {
 .manuscript header p {
   font-weight: 500;
 }
+
+/* ── Tesi online ─────────────────────────────────────────────────────────── */
+.tesi h2 {
+  scroll-margin-top: 6rem;
+  margin-top: 4rem;
+}
