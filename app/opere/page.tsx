@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import DownloadTesiButton from "@/components/DownloadTesiButton";
 
 export const metadata: Metadata = {
   title: "Opere — Prima del Verbo",
-  description: "La tesi di laurea e le future opere di Prima del Verbo.",
+  description: "La tesi filosofica, i saggi e le future opere di Prima del Verbo.",
 };
 
 export default function OpérePage() {
@@ -72,13 +73,55 @@ export default function OpérePage() {
                 className="text-lg leading-loose mb-2"
                 style={{ color: "var(--white)" }}
               >
-                Un attraversamento in undici capitoli: dal sonno della coscienza ordinaria al riconoscimento
+                Un attraversamento in quindici capitoli e tre movimenti: dal sonno della coscienza ordinaria al riconoscimento
                 dell&rsquo;Uno come fondamento mai perduto. In dialogo con Plotino, la Qabbalah,
                 l&rsquo;Advaita Vedānta, il Taoismo e la via apofatica.
               </p>
               {/* Download */}
               <DownloadTesiButton />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Saggio breve */}
+      <section className="mb-12 md:mb-20">
+        <div
+          className="border p-5 md:p-10"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--surface)" }}
+        >
+          <p
+            className="text-xs tracking-[0.2em] uppercase mb-2"
+            style={{ color: "var(--gold-muted)" }}
+          >
+            Saggio breve · 2026
+          </p>
+          <h2
+            className="text-2xl md:text-3xl font-light mb-4"
+            style={{ color: "var(--gold)" }}
+          >
+            Linguaggio e dimenticanza
+          </h2>
+          <p
+            className="text-lg leading-loose mb-6"
+            style={{ color: "var(--white)" }}
+          >
+            Sul modo in cui le parole ordinarie svuotano le cose del loro senso, e ci chiudono la via
+            del ritorno. Dieci movimenti, dall&rsquo;esperienza quotidiana all&rsquo;Uno.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/blog/linguaggio-e-dimenticanza"
+              className="inline-flex items-center gap-3 border px-5 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80"
+              style={{ borderColor: "var(--gold-muted)", color: "var(--gold)" }}
+            >
+              Leggi online
+            </Link>
+            <DownloadTesiButton
+              href="/linguaggio-e-dimenticanza.pdf"
+              label="Download PDF"
+              event="Download Linguaggio e dimenticanza"
+            />
           </div>
         </div>
       </section>
@@ -94,12 +137,6 @@ export default function OpérePage() {
 
         <div className="flex flex-col gap-6">
           {[
-            {
-              label: "Saggio breve",
-              title: "Linguaggio e dimenticanza",
-              desc: "Sul modo in cui le parole ordinarie ci allontanano dall'esperienza viva delle cose.",
-              stato: "In lavorazione",
-            },
             {
               label: "Raccolta",
               title: "Prose filosofiche",
