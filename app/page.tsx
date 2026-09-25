@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
 import NewsletterForm from "@/components/NewsletterForm";
+import HeroLogo3D from "@/components/HeroLogo3D";
 
 export default function HomePage() {
   const latestPosts = getAllPosts().slice(0, 3);
@@ -23,12 +24,9 @@ export default function HomePage() {
         />
 
         <Image
-          src="/logo_hero.png"
-          alt="Prima del Verbo"
-          width={160}
-          height={160}
-          className="mb-8 md:mb-10 opacity-90 w-[140px] md:w-[160px] h-auto"
-          priority
+          <div className="mb-6 md:mb-8 w-[240px] md:w-[340px]">
+           <HeroLogo3D />
+          </div>
         />
 
         <p
