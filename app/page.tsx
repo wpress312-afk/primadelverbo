@@ -23,11 +23,9 @@ export default function HomePage() {
           }}
         />
 
-        <Image
-          <div className="mb-6 md:mb-8 w-[240px] md:w-[340px]">
-           <HeroLogo3D />
-          </div>
-        />
+        <div className="mb-6 md:mb-8 w-[240px] md:w-[340px]">
+          <HeroLogo3D />
+        </div>
 
         <p
           className="text-sm tracking-[0.3em] uppercase mb-6"
